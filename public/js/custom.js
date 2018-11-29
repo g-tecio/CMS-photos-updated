@@ -18,17 +18,13 @@ function readURL(input) {
 function printfile(){
     var newfile = new FileReader();
     var files = document.getElementById('imageUpload').files;
-    var apiurl = 'https://s4w1qbwgu5.execute-api.us-west-1.amazonaws.com/prod/CMS_BETA'
+    var apiurl = 'https://sjazup8js9.execute-api.us-west-1.amazonaws.com/prod/CMS_CONTENT'
 
     newfile.readAsDataURL(files[0]);
     newfile.onload = function() {
         let item = {
-            id: 'sa',
-            comments: 'asd',
-            content: 'asd',
-            tags: 'cool, chido, perron',
-            title: 'Este es el title',
-            url: newfile.result,
+            tags: 'Test',
+            src: 'sad' //newfile.result,
         }
         $.ajax({
             type: "POST", 
@@ -39,7 +35,6 @@ function printfile(){
             dataType: "json", 
             success: function(data, status) {
                 console.log(JSON.parse(this.data));
-    
             }
         });
     }
