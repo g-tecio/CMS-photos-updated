@@ -18,13 +18,13 @@ function readURL(input) {
 function printfile(){
     var newfile = new FileReader();
     var files = document.getElementById('imageUpload').files;
-    var apiurl = 'https://sjazup8js9.execute-api.us-west-1.amazonaws.com/prod/CMS_CONTENT'
+    var apiurl = 'https://sjazup8js9.execute-api.us-west-1.amazonaws.com/dev/CMS_CONTENT'
 
     newfile.readAsDataURL(files[0]);
     newfile.onload = function() {
         let item = {
             tags: 'Test',
-            src: 'sad' //newfile.result,
+            src: newfile.result
         }
         $.ajax({
             type: "POST", 
